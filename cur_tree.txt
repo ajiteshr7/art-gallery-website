@@ -1,0 +1,15 @@
+.
+├── cur_tree.txt
+├── forms.py
+├── __init__.py
+├── models.py
+├── static
+│   ├── assets
+│   ├── js
+│   │   ├── bootstrap.min.js
+│   │   └── jquery.min.js
+│   └── style
+├── templates
+└── views.py
+
+5 directories, 7 files

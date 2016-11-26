@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+<div class="w3-container w3-padding-16">
+    <form class="w3-input-group form-signin"  action="" method=post>
+        <h2 class="form-signin-heading">Enter details</h2>
+        {% from 'macros.html' import render_field %}
+        {% for field in form %}
+          {{ render_field(field) }}
+        {% endfor %}
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% macro render_field(field) -%}
+
+{% if field.type == 'CSRFTokenField' %}
+    {{ field }}
+
+    {% if field.errors %}
+        <div class="warning">You have submitted an invalid CSRF token</div>
+    {% endif %}
+{% elif field.type == 'HiddenField' %}
+    {{ field }}
+{# any other special case you may need #}
+{% else %}
+        <!-- <label for="{{ field.label.field_id }}" class="col-sm-2 control-label">{{ field.label.text }}</label> -->
+            {{ field(placeholder=field.description,class_="w3-input w3-section") }}
+            {% if field.errors %}
+                <div class="alert alert-danger" role="alert">
+                {% for err in field.errors %}
+                    <p>{{ err|e }}</p>
+                {% endfor %}
+                </div>
+            {% endif %}
+{% endif %}
+
+{%- endmacro %}

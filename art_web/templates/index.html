@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px" id="home">
+  <img class="w3-image" src="{{ url_for( 'static' ,filename = 'assets/cover.png') }}" alt="Architecture" width="1500" height="1000">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge"><span class="w3-border w3-border-black w3-padding">ALM</span> <span class="w3-hide-small">Art Gallery</span></h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="Painting">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-12">Featured Paintings</h3>
+  </div>
+  <div class="w3-row-padding">
+    {% for painting,file in paintings.items() %}
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">{{painting}}</div>
+        <img id="resize" src="{{ url_for( 'static' ,filename = 'assets/'+file) }}" alt="House" style="width:100%">
+      </div>
+    </div>
+    {% endfor %}
+<div>
+  <div class="w3-container w3-padding-32" id="Sculptures">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-12">Featured Sculptures</h3>
+  </div>
+
+  <div class="w3-row-padding">
+      {% for painting,file in sculptures.items() %}
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">{{painting}}</div>
+          <img id="resize" src="{{ url_for( 'static' ,filename = 'assets/'+file) }}" alt="House" style="width:100%">
+        </div>
+      </div>
+      {% endfor %}
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-12">About This Site</h3>
+    <p>ALM Art Gallery is an open source website containing over 100 different varieties of paintings and sculptures, including collections of
+       visuals, performing, and media arts of modern and medieval times. A reflection of our multidisciplinary mission and the increasingly
+        cross-disciplinary practice of artists, ALM gallery reflect a diverse range of artistic pursuits, including: a permanent collection
+         of visual arts, the Moving Image Collection, performing arts commissions, the library’s Collection of
+          artists’ books, Company Collection like those from Pixar, and the Digital Arts Study Collection.
+           Browse our holdings and learn more about the art and artists who animate our collections.
+    </p>
+  </div>
+
+
+  <div class="w3-container w3-padding-32" id="About_Us">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-12">Contributors</h3>
+  </div>
+
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <img src="{{ url_for('static', filename = 'assets/profile.png') }}" alt="AMS" style="width:60%">
+      <h3>Abdul Mohsin Siddiqi</h3>
+      <p class="w3-opacity">Frontend Developer</p>
+      <p>Undergraduate in Bachelors of Technology (Computer Engineering) at Jamia Millia Islamia, New Delhi</p>
+      <!-- <p><button class="w3-btn-block">Contact</button></p> -->
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <img src="{{ url_for('static', filename = 'assets/profile.png') }}" alt="Ajitesh" style="width:60%">
+      <h3>Ajitesh Rai</h3>
+      <p class="w3-opacity">Backend Developer</p>
+      <p>Undergraduate in Bachelors of Technology (Computer Engineering) at Jamia Millia Islamia, New Delhi</p>
+      <!-- <p><button class="w3-btn-block">Contact</button></p> -->
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <img src="{{ url_for('static', filename = 'assets/profile.png') }}" alt="Lakshita" style="width:60%">
+      <h3>Lakshita Bhatia</h3>
+      <p class="w3-opacity">Team Leader</p>
+      <p>Undergraduate in Bachelors of Technology (Computer Engineering) at Jamia Millia Islamia, New Delhi</p>
+      <!-- <p><button class="w3-btn-block">Contact</button></p> -->
+    <!--</div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="/w3images/team4.jpg" alt="Dan" style="width:100%">
+      <h3>Dan Star</h3>
+      <p class="w3-opacity">Architect</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p><button class="w3-btn-block">Contact</button></p>
+    </div>-->
+  </div>
+
+  <div class="w3-container w3-padding-4" id="Feedback">
+  <!-- Feedback Section -->
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-4">Feedback</h3>
+  </div>
+
+
+  <div class="w3-container w3-padding-16">
+    <p>Write a review...</p>
+<form class="w3-input-group"  action="" method=post>
+{% from 'macros.html' import render_field %}
+{% for field in form %}
+    {{ render_field(field) }}
+{% endfor %}
+</form>
+</div>
+
+<!-- End page content -->
+</div>
+{% endblock %}

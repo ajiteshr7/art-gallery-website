@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+
+<div class="w3-container w3-padding-16">
+<form class="form-signin w3-input-group"  action="{{ url_for('signup') }}" method=post>
+      <h2 class="form-signin-heading">Sign Up</h2>
+        {% for message in form.firstname.errors %}
+        <div class="flash alert alert-danger">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.lastname.errors %}
+        <div class="flash alert alert-danger">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.email.errors %}
+        <div class="flash alert alert-danger">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.phone_number.errors %}
+        <div class="flash alert alert-danger">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.gender.errors %}
+        <div class="flash alert alert-danger">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.address.errors %}
+        <div class="flash alert alert-danger">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.city.errors %}
+        <div class="flash alert alert-danger">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.country.errors %}
+        <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {{ form.hidden_tag() }}
+
+        {{ form.firstname.label(class_='w3-label') }}
+        {{ form.firstname(class_='form-control w3-animate-input') }}
+
+        {{ form.lastname.label(class_='w3-label') }}
+        {{ form.lastname(class_='form-control w3-animate-input') }}
+
+        {{ form.email.label(class_='w3-label') }}
+        {{ form.email(class_='form-control w3-animate-input')}}
+
+        {{ form.password.label(class_='w3-label') }}
+        {{ form.password(class_='form-control w3-animate-input')}}
+
+        {{ form.phone_number.label(class_='w3-label') }}
+        {{ form.phone_number(class_='form-control w3-animate-input')}}
+
+        {{ form.gender.label(class_='w3-label') }}
+        {{ form.gender(class_='form-control w3-animate-input')}}
+
+        {{ form.address.label(class_='w3-label') }}
+        {{ form.address(class_='form-control w3-animate-input')}}
+
+        {{ form.city.label(class_='w3-label') }}
+        {{ form.city(class_='form-control w3-animate-input')}}
+
+        {{ form.country.label(class_='w3-label') }}
+        {{ form.country(class_='form-control w3-animate-input')}}
+
+        {{ form.submit(class_='w3-btn w3-btn-block w3-section btn-lg btn-primary')}}
+  </form>
+</div>
+{% endblock %}

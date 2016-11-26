@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="w3-container">
+
+  <form class="form-signin"  action="{{ url_for('signin') }}" method=post>
+      <h2 class="form-signin-heading">Sign In</h2>
+
+        {% for message in form.email.errors %}
+        <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.password.errors %}
+        <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {{ form.hidden_tag() }}
+
+        {{ form.email.label(class_='w3-label') }}
+        {{ form.email(class_='form-control w3-animate-input') }}
+
+        {{ form.password.label(class_='w3-label') }}
+        {{ form.password(class_='form-control w3-animate-input') }}
+
+{{ form.submit(class_='w3-btn w3-btn-block w3-section btn-lg btn-primary') }}
+  </form>
+</div>
+{% endblock %}

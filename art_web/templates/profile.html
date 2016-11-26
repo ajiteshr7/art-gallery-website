@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+<div class="w3-container">
+    <div class="w3-row-padding">
+      <div class="w3-col l4 col-lg-offset-5 w3-margin-bottom">
+        <h2>User profile</h2>
+        <img src="{{ url_for('static', filename = 'assets/profile.png') }}" alt="" style="width:60%">
+        <h3>{{ session['email'] }}</h3>
+        <!-- <p class="w3-opacity">Frontend Developer</p>
+        <p>Undergraduate in Bachelors of Technology (Computer Engineering) at Jamia Millia Islamia, New Delhi</p> -->
+        <p><a href="{{ url_for( 'art' ) }}"><button style="width:60%;" class="w3-btn w3-section">Submit Art</button></a></p>
+      </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,1 @@
+sudo apt install python-dev libmysqlclient-dev python-mysqldb
