@@ -89,7 +89,9 @@ def signup():
         if form.validate() == False:
             return render_template('signup.html',title = title, form=form)
         else:
-             newuser = User(form.firstname.data, form.lastname.data, form.email.data, form.password.data)
+             newuser = User(form.firstname.data, form.lastname.data, form.email.data\
+             , form.password.data, form.phone_number.data, form.gender.data, form.address.data\
+             , form.city.data, form.country.data)
              db.session.add(newuser)
              db.session.commit()
              session['email'] = newuser.email

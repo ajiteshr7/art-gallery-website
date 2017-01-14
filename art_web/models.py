@@ -23,7 +23,7 @@ class User(db.Model):
         self.email = email.lower()
         self.set_password(password)
         self.phone_number = phone_number
-        self.gender = gender.title()
+        self.gender = gender.upper()
         self.address = address
         self.city = city.title()
         self.country = country.title()
