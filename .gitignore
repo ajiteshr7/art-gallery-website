@@ -1,3 +1,4 @@
 *.pyc
 *.sql
+*.vscode
 /migrations
