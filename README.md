@@ -45,9 +45,11 @@ If you'd like to request a new functionality, feel free to do so by opening an i
  - Go-Online!!
 
 ## The team
-1. [Ajitesh Rai](https://github.com/ajiteshr7)
-2. [Lakshita Bhatia](https://github.com/lakshita-bhatia)
-3. [Abdul Mohsin Siddqi](https://github.com/mohsincl)
+
+[![Ajitesh Rai](https://avatars2.githubusercontent.com/u/16607284?v=4&s=200)](https://github.com/ajiteshr7) | [<img src="https://avatars1.githubusercontent.com/u/11724736?v=4&s=150" alt="Lakshita Bhatia" width="200"/>](https://github.com/lakshita-bhatia) |  [<img src="https://avatars1.githubusercontent.com/u/17673732?v=4&s=150" alt="Abdul Mohsin Siddqi" width="200"/>](https://github.com/mohsincl)
+---|---| ---
+[Ajitesh Rai](https://github.com/ajiteshr7) |[Lakshita Bhatia](https://github.com/lakshita-bhatia) |[Abdul Mohsin Siddqi](https://github.com/mohsincl)
+
 
 License
 ----
