@@ -2,3 +2,4 @@
 *.sql
 *.vscode
 /migrations
+.history/
