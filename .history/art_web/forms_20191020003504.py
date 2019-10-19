@@ -7,7 +7,7 @@ class SignupForm(Form):
     firstname = TextField("First name", [validators.Required("Please enter your first name.")])
     lastname = TextField("Last name", [validators.Required("Please enter your last name.")])
     email = TextField("Email", [validators.Required("Please enter your email address.")\
-    , validators.Email("Please enter a valid email address.")])
+    , validators.Email("Please enter your email address.")])
     password = PasswordField('Password', [validators.Required("Please enter a password.")])
     phone_number = TextField("Phone number")
     gender = TextField("gender")
@@ -31,7 +31,7 @@ def validate(self):
 
 class SigninForm(Form):
     email = TextField("Email", [validators.Required("Please enter your email address.")\
-    , validators.Email("Please enter a valid email address.")])
+    , validators.Email("Please enter your email address.")])
     password = PasswordField('Password', [validators.Required("Please enter a password.")])
     submit = SubmitField("Sign In")
 
