@@ -9,7 +9,7 @@ Flask-Uploads==0.2.1
 Flask-WTF==0.13.1
 gunicorn==19.7.1
 itsdangerous==0.24
-Jinja2==2.8
+Jinja2==2.11.3
 Mako==1.0.6
 MarkupSafe==0.23
 MySQL-python==1.2.5
